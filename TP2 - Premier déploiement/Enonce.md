@@ -80,7 +80,14 @@
     Créez un principal de service :
 
     ```shell
-    az ad sp create-for-rbac --role="Contributor" --scopes="/subscriptions/<SUBSCRIPTION_ID>"					
+   # Create SP without role assignment
+az ad sp create-for-rbac --name "myServicePrincipal" --skip-assignment
+
+# Administrator assigns role separately
+az role assignment create --assignee <appId> \
+  --role Contributor \
+  --scope /subscriptions/9a86476e-b022-4aa8-9372-dab324cf625d
+				
     ```
 
     Affichage en sortie:
