@@ -1,0 +1,1 @@
+instance_template = "Standard_B1ms"
