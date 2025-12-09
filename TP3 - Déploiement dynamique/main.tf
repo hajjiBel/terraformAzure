@@ -107,10 +107,7 @@ resource "azurerm_linux_virtual_machine" "tftraining-vm" {
   disable_password_authentication = false
 
   source_image_reference {
-    publisher = "Canonical"
-    offer     = data.azurerm_platform_image.training-image.offer
-    sku       = "server"
-    version   = "latest"
+    ...
   }
 
 
